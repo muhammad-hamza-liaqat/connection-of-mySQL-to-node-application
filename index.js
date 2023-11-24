@@ -12,6 +12,15 @@ app.use(express.urlencoded({extended: true}))
 
 
 
+
+
 app.listen(PORT, ()=>{
     console.log(`server running at localhost:${PORT}/`)
-})
+});
+
+// database connection
+if (connectDB.state === 'authenticated'){
+    console.log("database connected")
+} else {
+    console.log("database not connected!")
+}
